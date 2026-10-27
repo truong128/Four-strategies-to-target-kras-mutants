@@ -1,4 +1,4 @@
-# Two Therapeutic Strategies to Target KRAS Mutants
+# Therapeutic Strategies to Target KRAS Mutants
 
 ### An open, end-to-end computational platform for drug discovery, drug repurposing and antisense therapeutics: it screens 13.6 billion molecules *and* designs ADAR-recruiting guide RNAs against the same pancreatic cancer driver
 
