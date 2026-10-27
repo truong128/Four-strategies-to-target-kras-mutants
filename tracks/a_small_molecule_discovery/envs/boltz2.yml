@@ -1,0 +1,9 @@
+name: boltz2
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - pip
+  - rdkit
+  - pip:
+      - "boltz>=2.2"
+      # Blackwell GPUs (CUDA 13): run Boltz with --no_kernels (already set in config.yaml: use_kernels false).

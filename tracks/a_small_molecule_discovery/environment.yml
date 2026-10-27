@@ -1,0 +1,27 @@
+name: pdac-dd
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.12
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - joblib
+  - pyyaml
+  - pyarrow
+  - rdkit
+  - xgboost
+  - lightgbm
+  - catboost
+  - shap
+  - matplotlib
+  - requests
+  - tqdm
+  - vina
+  - gemmi
+  - prody
+  - pip:
+      - meeko

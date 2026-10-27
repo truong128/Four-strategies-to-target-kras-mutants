@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="851.4pt" height="369.216pt" viewBox="0 0 851.4 369.216" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-27T16:25:11.168139</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 369.216 
+L 851.4 369.216 
+L 851.4 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 23.103 163.31904 
+L 128.007 163.31904 
+Q 135.54 163.31904 135.54 160.125696 
+L 135.54 88.452864 
+Q 135.54 85.25952 128.007 85.25952 
+L 23.103 85.25952 
+Q 15.57 85.25952 15.57 88.452864 
+L 15.57 160.125696 
+Q 15.57 163.31904 23.103 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 161.487 163.31904 
+L 266.391 163.31904 
+Q 273.924 163.31904 273.924 160.125696 
+L 273.924 88.452864 
+Q 273.924 85.25952 266.391 85.25952 
+L 161.487 85.25952 
+Q 153.954 85.25952 153.954 88.452864 
+L 153.954 160.125696 
+Q 153.954 163.31904 161.487 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 299.871 163.31904 
+L 404.775 163.31904 
+Q 412.308 163.31904 412.308 160.125696 
+L 412.308 88.452864 
+Q 412.308 85.25952 404.775 85.25952 
+L 299.871 85.25952 
+Q 292.338 85.25952 292.338 88.452864 
+L 292.338 160.125696 
+Q 292.338 163.31904 299.871 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 438.255 163.31904 
+L 543.159 163.31904 
+Q 550.692 163.31904 550.692 160.125696 
+L 550.692 88.452864 
+Q 550.692 85.25952 543.159 85.25952 
+L 438.255 85.25952 
+Q 430.722 85.25952 430.722 88.452864 
+L 430.722 160.125696 
+Q 430.722 163.31904 438.255 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 576.639 163.31904 
+L 681.543 163.31904 
+Q 689.076 163.31904 689.076 160.125696 
+L 689.076 88.452864 
+Q 689.076 85.25952 681.543 85.25952 
+L 576.639 85.25952 
+Q 569.106 85.25952 569.106 88.452864 
+L 569.106 160.125696 
+Q 569.106 163.31904 576.639 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 715.023 163.31904 
+L 819.927 163.31904 
+Q 827.46 163.31904 827.46 160.125696 
+L 827.46 88.452864 
+Q 827.46 85.25952 819.927 85.25952 
+L 715.023 85.25952 
+Q 707.49 85.25952 707.49 88.452864 
+L 707.49 160.125696 
+Q 707.49 163.31904 715.023 163.31904 
+z
+" clip-path="url(#pce60931f71)" style="fill: #fbebd0; stroke: #e9a23b; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3a5f" x="15.57" y="24.883921" transform="rotate(-0 15.57 24.883921)">Track C: short peptide binders for 18 KRAS allele targets</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #7f8c8d" x="15.57" y="36.366896" transform="rotate(-0 15.57 36.366896)">Backbone from 7RPZ chain A (residues 1-169). Mutant side chains are grafted, so each target carries one substitution.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(55.57125 117.20553)">PDB 7RPZ</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(38.88 126.79678)">(G12D, MRTX1133</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(56.265 136.801155)">removed)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(182.26775 117.27178)">Graft side chain</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(173.582125 126.863655)">at codon 12, 13, 61,</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(192.034625 137.201155)">117 or 146</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 136.7955 124.28928 
+Q 144.747 124.28928 151.245056 124.28928 
+" style="fill: none; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 147.645056 122.48928 
+L 151.245056 124.28928 
+L 147.645056 126.08928 
+z
+" style="fill: #7f8c8d; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(321.332375 116.49678)">Condition spec:</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(317.994875 126.49678)">hotspots, H-bond</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(319.308625 136.49678)">donor / acceptor</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 275.1795 124.28928 
+Q 283.131 124.28928 289.629056 124.28928 
+" style="fill: none; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 286.029056 122.48928 
+L 289.629056 124.28928 
+L 286.029056 126.08928 
+z
+" style="fill: #7f8c8d; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(462.086375 117.27178)">RFD4-Proteina</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(461.783875 126.801155)">(RFdiffusion3 /</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(472.673875 136.801155)">Proteina)</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 413.5635 124.28928 
+Q 421.515 124.28928 428.013056 124.28928 
+" style="fill: none; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 424.413056 122.48928 
+L 428.013056 124.28928 
+L 424.413056 126.08928 
+z
+" style="fill: #7f8c8d; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(597.366 121.49678)">Complexes with</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(597.347875 131.49678)">8-16 aa peptide</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 551.9475 124.28928 
+Q 559.899 124.28928 566.397056 124.28928 
+" style="fill: none; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 562.797056 122.48928 
+L 566.397056 124.28928 
+L 562.797056 126.08928 
+z
+" style="fill: #7f8c8d; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(731.581875 116.49678)">Optional refolding</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(739.478125 126.801155)">metrics (AF3 /</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'" transform="translate(730.8425 136.49678)">OpenFold3 oracle)</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 690.3315 124.28928 
+Q 698.283 124.28928 704.781056 124.28928 
+" style="fill: none; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 701.181056 122.48928 
+L 704.781056 124.28928 
+L 701.181056 126.08928 
+z
+" style="fill: #7f8c8d; stroke: #7f8c8d; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3a5f" x="15.57" y="220.0896" transform="rotate(-0 15.57 220.0896)">Allele panel</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans Mono'; text-anchor: start" x="15.57" y="241.37856" transform="rotate(-0 15.57 241.37856)">G12D  WT  G12C  G12V  G12R  G12A  G13D  A146T  G12S  G12F  G13C  G13R  Q61H  Q61L  Q61R  Q61K  A146V  K117N</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #7f8c8d" transform="translate(15.57 283.739691)">Codons 12, 13 and 61 use the P-loop / switch-II pocket. K117 and A146 use the local nucleotide-site residues.</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #7f8c8d" transform="translate(15.57 293.341879)">rfd4-proteina is an external dependency (cloned by scripts/bootstrap.sh c), not vendored here.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pce60931f71">
+   <rect x="7.2" y="7.2" width="837" height="354.816"/>
+  </clipPath>
+ </defs>
+</svg>

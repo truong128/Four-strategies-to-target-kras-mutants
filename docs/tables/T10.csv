@@ -1,0 +1,12 @@
+Resource,Why excluded,How to obtain,Used by
+Enamine REAL (13.6 B),"vendor license, about 330 GB compressed",register at enamine.net and download the .cxsmiles.bz2 shards,A
+Purchasable building-block inventory,third-party data,Syntheseus Retro* benchmark set (Figshare 10.6084/m9.figshare.25376728),A (retrosynthesis)
+"PDB structures (7RPZ, 6MBU, ...)","public, regenerated",scripts/fetch_public_inputs.sh (RCSB),"A, A2, C"
+Ensembl GRCh38 release 113 cDNA + GTF,"public, large",scripts/fetch_public_inputs.sh b,B
+UniProt P55265 (ADAR1),"public, regenerated",downloaded by setup_real_run.py,B
+RESTORE 2.0 supplementary workbooks,publisher copyright,"download from the publisher, ingest with scripts/ingest_publisher_workbooks.py",B
+Boltz-2 weights,"large, licensed by Boltz",downloaded by Boltz on first use,"A, B"
+RetroChimera checkpoints,"large, third party",see upstream RetroChimera instructions,A
+RFD4-Proteina weights,"large, third party","scripts/bootstrap.sh c (Hugging Face release, about 1.7 GB)",C
+FDA drug SMILES tables,user supplied,FDA_DRUG_PKL / FDA_DRUG_CSV environment variables,A (repurposing scripts)
+Tumor-normal or RNA-seq data,patient or experimental data,your own; never commit,B (optional)

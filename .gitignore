@@ -1,0 +1,117 @@
+# ---------------------------------------------------------------------------
+# This repository ships CODE, CONFIGS AND DOCUMENTATION ONLY.
+# Everything below is data, a result, or a download. It must never be committed.
+# ---------------------------------------------------------------------------
+
+# results and run artifacts
+results/
+**/results/
+runs/
+**/runs/
+work/
+**/work/
+outputs/
+hydra_outputs/
+.nextflow/
+.nextflow.log*
+.nextflow*
+timeline.html*
+report.html*
+trace.txt*
+dag.html*
+**/out/
+**/real_run_*/
+
+# downloaded or generated inputs
+data/
+**/data/
+structures/
+**/structures/
+**/targets/
+reference/
+**/reference/
+source_material/
+external/
+inputs/library.csv
+**/inputs/library.csv
+config.local.yaml
+**/config.local.yaml
+**/restore2_published/
+**/publisher_*
+
+# chemistry and structure files (public or generated; fetch with scripts/fetch_public_inputs.sh)
+*.pdb
+*.pdbqt
+*.cif
+*.cif.zst
+*.mmcif
+*.sdf
+*.mol2
+*.prmtop
+*.inpcrd
+*.rst7
+*.dcd
+*.nc
+*.xtc
+*.trr
+*.bz2
+*.cxsmiles
+*.cxsmiles.*
+!tracks/b_adar_rna_editing/examples/synthetic_only/*.pdb
+!tracks/b_adar_rna_editing/examples/synthetic_only/*.prmtop
+!tracks/b_adar_rna_editing/examples/synthetic_only/*.inpcrd
+
+# models and weights
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.onnx
+
+# omics and tabular data (patient or experimental)
+*.bam
+*.bai
+*.cram
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.vcf
+*.vcf.gz
+*.bcf
+*.xlsx
+*.xls
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.fa.fai
+*.gtf
+*.gtf.gz
+
+# secrets and machine-local files
+.env
+.env.*
+*.pem
+*.key
+*.token
+.netrc
+*.local.yaml
+*.local.yml
+.DS_Store
+Thumbs.db
+
+# python / editors
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+.idea/
+.vscode/

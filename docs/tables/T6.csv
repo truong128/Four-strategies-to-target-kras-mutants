@@ -1,0 +1,12 @@
+#,Stage,Executor,Input,Output,Boundary
+1,Reference setup,scripts/setup_real_run.py,"Ensembl GTF + cDNA, UniProt P55265","KRAS CDS, gene map, ADAR1 FASTAs","CDS validated: ATG start, one stop, codon 12 = Gly"
+2,Variant check,scripts/adar_pipeline.py,HGVS c. table,reversibility call,reference base must match the CDS
+3,Guide design,scripts/adar_pipeline.py,correctable variants,"guides at 33, 40, 59 nt",A-C mismatch design; no editing-rate estimate
+4,Chemistry transfer,scripts/transfer_publisher_chemistry.py,RESTORE 2.0 workbooks (user downloaded),positional chemistry per guide,"transferred, not validated on KRAS"
+5,Local RNA structure,scripts/advanced.py,guide and target,ViennaRNA fold and cofold,not modification-aware
+6,Off-target screen,full/offtarget.py,transcriptome + guides,"Bowtie2 local hits, per gene","binding opportunity, not editing"
+7,Structure,full/structure.py,ADAR1 716-1226 + RNA,Boltz-2 ensemble geometry,"canonical RNA, no Zn2+, no modifications"
+8,Parameterization and MD,"full/parameterize.py, full/dynamics.py",validated Amber parameters,NPT trajectories,refused without hash-bound validation
+9,Chemistry-aware ML,full/learning.py,curated measured editing,"grouped CV, external holdout",abstains without labeled data
+10,Experimental read-out,full/experimental.py,treated and control BAM,base fractions at sites,heterozygous allele warnings
+11,Ranking,full/prioritize.py,all evidence,research ranking,experiment-gated

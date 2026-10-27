@@ -1,0 +1,9 @@
+Stage group,Resource,Scales with,Config knob
+Streaming + sampling,"CPU cores, disk read",library size,"sample_file_parallel, sample_decompress_threads"
+Vina docking,CPU cores,molecules x exhaustiveness,"docking.workers, exhaustiveness"
+Classifier training,"CPU, optional GPU for neural nets",rows x models,"ml.*_max_rows, dl_epochs"
+Library inference,"CPU cores, RAM",library size,"inference_workers, inference_chunk_size"
+Boltz-2,GPU,compounds x samples,"boltz.max_input, diffusion_samples"
+OpenMM MD,GPU,compounds x ns,"md.max_short, short_ns"
+Track B off-target,"CPU cores, RAM",guides x transcriptome,offtarget.threads
+Track C design,GPU,alleles x replicates,"N, BATCH, ALLELES"

@@ -1,0 +1,43 @@
+# Real run for ADAR-recruiting ASO design against KRAS in PDAC.
+# Build references first: bash scripts/fetch_ensembl_reference.sh && ./run_all.sh setup-real
+# Regenerate references with: ./run_all.sh setup-real
+# Use a NEW `out` for every run. Commands:
+#   ./run_all.sh preflight --config config/real_run_pdac_kras.yaml
+#   ./run_all.sh full-e2e  --config config/real_run_pdac_kras.yaml                  # plan only
+#   ./run_all.sh full-e2e  --config config/real_run_pdac_kras.yaml --execute-heavy  # bowtie2 + Boltz-2
+out: results/real_run_01
+
+discovery:
+  transcript: ENST00000311936            # KRAS-4B, MANE Select, Ensembl 113 transcript version 8
+  variants_csv: config/kras_pdac_variants.csv
+  cds_fasta: reference/kras/ENST00000311936_cds.fa
+  allow_synthetic_panel: false
+  lengths: [33, 40, 59]
+
+restore2:
+  publisher_dir: reference/publisher
+
+offtarget:
+  transcriptome_fasta: reference/ensembl/Homo_sapiens.GRCh38.cdna.sense.fa   # from scripts/fetch_ensembl_reference.sh
+  index_prefix: null                     # built inside this run directory
+  gene_map: reference/annotation/transcript_gene_map.tsv
+  on_target_gene: KRAS
+  threads: 16
+
+structure:
+  adar_fasta: reference/adar1/ADAR1_DRBM3_deaminase_716-1226.fasta   # P55265 residues 716-1226
+  variants: [KRAS_G12D]
+  msa: auto
+  use_msa_server: true                   # sends the public ADAR1 sequence to the ColabFold MSA server
+  allow_single_sequence: false
+  no_kernels: true                       # required for Boltz-2 on Blackwell GPUs (CUDA 13); harmless elsewhere
+  devices: 1
+  samples: 5
+
+# Inputs below need your own validated data. They stay skipped until you provide them.
+somatic: {}
+forcefield: {build_specs_csv: null, padding_A: 12, salt_molar: 0.15}
+md: {jobs_csv: null, auto_jobs_from_forcefield: true, platform: CUDA, replicates: 3, equil_steps: 250000, production_steps: 5000000}
+machine_learning: {curated_labels_csv: null, curated_chemistry_positions_csv: null, external_labels_csv: null, external_chemistry_positions_csv: null}
+ranking: {experimental_csv: null}
+experimental_rnaseq: {treated_bam: null, control_bam: null, reference_fasta: null, sites_csv: null}

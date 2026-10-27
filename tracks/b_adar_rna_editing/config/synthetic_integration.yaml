@@ -1,0 +1,39 @@
+discovery:
+  cds_fasta: inputs/smoke/synthetic.fa
+  lengths:
+  - 33
+  - 40
+  - 59
+  transcript: SYNTHETIC
+  variants_csv: config/synthetic_for_integration.csv
+  allow_synthetic_panel: true
+forcefield:
+  build_specs_csv: null
+  padding_A: 12
+machine_learning:
+  curated_chemistry_positions_csv: null
+  curated_labels_csv: null
+md:
+  equil_steps: 250000
+  jobs_csv: null
+  platform: auto
+  production_steps: 5000000
+  replicates: 3
+offtarget:
+  index_prefix: results/full_e2e/index/transcriptome
+  transcriptome_fasta: null
+out: results/full_synthetic_integration
+ranking:
+  experimental_csv: null
+restore2:
+  publisher_dir: reference/publisher
+  source_xlsx: null
+  supplement_xlsx: null
+structure:
+  adar_fasta: null
+  allow_single_sequence: false
+  devices: 1
+  msa: auto
+  samples: 5
+  use_msa_server: true
+

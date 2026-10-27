@@ -1,0 +1,10 @@
+name: amber
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - ambertools        # cpptraj, MMPBSA.py, antechamber, tleap
+  - openmm
+  - pdbfixer
+  - mdtraj
+  - numpy
+  - pandas

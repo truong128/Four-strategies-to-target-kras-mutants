@@ -1,0 +1,21 @@
+KRAS G12D / PDAC target
+  -> structural/redocking QC
+  -> standardized ultra-large library
+  -> representative training sample
+  -> Vina labels (top ~1%)
+  -> ECFP + descriptors
+  -> 20-classifier benchmark (16 BRFSS models + FT-Transformer x2, RealMLP, Tabular ResNet)
+  -> scaffold train/validation/calibration/LOCKED test
+  -> single model vs top-3 soft vote
+  -> isotonic calibration + class-conditional conformal prediction
+  -> chunked multi-billion inference
+  -> re-docking
+  -> ADMET-AI
+  -> diversity clustering
+  -> resistance panel on the short list (G12D GDP, G12D GTP-like, WT counter-screen, experimental and modeled resistance mutants, up to 200)
+  -> Boltz-2 on the short list (complex plus affinity, up to 200)
+  -> RetroChimera retrosynthesis on the 50 best-docked clustered compounds
+  -> OpenMM MD, 100 ns, on the top 20
+  -> MM/GBSA on the top 20
+  -> Pareto + rank aggregation
+  -> experimental shortlist

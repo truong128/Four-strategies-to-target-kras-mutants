@@ -1,0 +1,19 @@
+pdb_id,allele,state,source_type,mutation,notes
+7RPZ,G12D,GDP,experimental,,Reference switch-II complex. Bound inhibitor removed; GDP and Mg kept.
+6MBU,WT,GDP,experimental,,Wild-type GDP crystal. Parent structure for every modeled allele.
+4LDJ,G12C,GDP,experimental,,GDP crystal. Vina does not form the covalent bond used by G12C drugs.
+4TQ9,G12V,GDP,experimental,,"GDP crystal, chain A."
+4QL3,G12R,GDP,experimental,,"GDP crystal, chain A."
+5VP7,G12A,GDP,experimental,,GDP crystal. Also carries engineered C118S.
+4TQA,G13D,GDP,experimental,,"GDP crystal, chain A."
+6BOF,A146T,GDP,experimental,,GDP crystal. Biological assembly is a homodimer; docking keeps chain A only. Switch I is open in this lattice.
+MODEL_G12S,G12S,GDP,modeled_from_6MBU,GLY-12-SER,No deposited GDP structure with an intact switch II. One substitution on 6MBU.
+MODEL_G12F,G12F,GDP,modeled_from_6MBU,GLY-12-PHE,No deposited GDP structure. One substitution on 6MBU.
+MODEL_G13C,G13C,GDP,modeled_from_6MBU,GLY-13-CYS,No deposited GDP structure. One substitution on 6MBU.
+MODEL_G13R,G13R,GDP,modeled_from_6MBU,GLY-13-ARG,No deposited GDP structure. One substitution on 6MBU.
+MODEL_Q61H,Q61H,GDP,modeled_from_6MBU,GLN-61-HIS,Deposited Q61H entries are G12D/Q61H doubles. Built from wild-type 6MBU.
+MODEL_Q61L,Q61L,GDP,modeled_from_6MBU,GLN-61-LEU,"4WA7 is Q61L GDP but residues 60-69 are absent, so the crystal is not used."
+MODEL_Q61R,Q61R,GDP,modeled_from_6MBU,GLN-61-ARG,9O0S is Q61R bound to GMPPNP. The GDP state is built from 6MBU.
+MODEL_Q61K,Q61K,GDP,modeled_from_6MBU,GLN-61-LYS,No deposited GDP structure. One substitution on 6MBU.
+MODEL_A146V,A146V,GDP,modeled_from_6MBU,ALA-146-VAL,No deposited GDP structure. One substitution on 6MBU.
+MODEL_K117N,K117N,GDP,modeled_from_6MBU,LYS-117-ASN,No deposited GDP structure. One substitution on 6MBU.

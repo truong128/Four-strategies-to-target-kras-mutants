@@ -1,0 +1,16 @@
+#,Stage,Script,Tool,Input,Output,Key parameter
+1,Target and box,fetch_structures.py,"PDBFixer, Meeko",RCSB 7RPZ,"receptor PDBQT, box","box center (1.714, 4.927, -23.164), size 24 A"
+2,Library streaming and filter,prepare_library.py / sample_library.py,"RDKit, lbzip2",Enamine .cxsmiles.bz2 shards,standardized or sampled SMILES,"MW <= 450.0, sLogP <= 5.0, TPSA <= 140.0, RotB <= 10"
+3,Training sample,sample_library.py,reservoir sampling,library,training_sample.smi,"n = 200000, seed 42"
+4,Training docking,dock_vina_batch.py,AutoDock Vina 1.2,sample + receptor,training_docking.csv,"exhaustiveness 4, 28 workers"
+5,Classifier benchmark,"benchmark_16_models.py, tabular_nets.py","scikit-learn, PyTorch",docking labels,"model bundle, comparison, locked-test metrics",top 1.0% = active; scaffold split; 20 models
+6,Ultra-large inference,predict_ultralarge.py,"joblib, RDKit",library + bundle,ml_hits.csv.gz,keep top 50000; conformal epsilon 0.15
+7,Redocking,dock_vina_batch.py --redock,AutoDock Vina,ML hits,redocked_hits.csv,exhaustiveness 8
+8,ADMET filter,run_admet.py,ADMET-AI 2,redocked hits,admet_filtered.csv,"hERG, AMES, hepatotoxicity < 0.5"
+9,Diversity clustering,cluster_hits.py,RDKit Butina-style,filtered hits,diverse_hits.csv,Tanimoto cutoff 0.55
+10,Resistance panel,"build_resistance_panel.py, dock_resistance_panel.py","Biopython, PDBFixer, Meeko, Vina",diverse hits + panel TSV,resistance_scores.csv,up to 200 compounds; 7 experimental + 9 modeled receptors
+11,Boltz-2 complex and affinity,run_boltz_batch.py,Boltz-2,short list + protein,boltz_scores.csv,up to 200 compounds; no custom kernels on Blackwell
+12,Retrosynthesis,synthetic_feasibility.py,RetroChimera + Syntheseus Retro*,best docked,synthesis_scores.csv,"50 compounds, USPTO-50K checkpoint"
+13,Molecular dynamics,"run_md_batch.py, md_openmm.py","OpenMM, amber14, OpenFF 2.2.1",top docked + protein,md_scores.csv,"20 compounds, 100 ns"
+14,MM/GBSA,"run_mmpbsa_batch.py, mmgbsa_from_md.py",AmberTools,MD trajectories,mmpbsa_scores.csv,"igb=5, 0.15 M salt; 20 compounds"
+15,Final ranking,final_rank.py,pandas,all tables,ranked and Pareto CSVs,13 weighted criteria + Pareto front; report 50

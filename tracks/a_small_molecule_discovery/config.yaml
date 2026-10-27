@@ -1,0 +1,188 @@
+# PDAC-DD-E2E master configuration (portable template).
+# Run scripts/configure_local.py once: it writes config.local.yaml with absolute interpreter paths
+# for the conda environments found on your machine. Pass config.local.yaml to Nextflow.
+project:
+  name: PDAC_KRAS_G12D
+  seed: 42
+  outdir: results
+
+target:
+  name: KRAS_G12D
+  gene: KRAS
+  pdb_id: 7RPZ
+  receptor_pdb: structures/7RPZ_KRAS_G12D_protein.pdb
+  receptor_pdbqt: structures/KRAS_G12D.pdbqt
+  reference_ligand_sdf: structures/7RPZ_MRTX1133.sdf
+  box:
+    center: [1.714, 4.927, -23.164]
+    size: [24.0, 24.0, 24.0]
+
+library:
+  max_mw: 450.0
+  max_clogp: 5.0
+  max_tpsa: 140.0
+  max_rotatable_bonds: 10
+  allowed_formal_charge_abs: 2
+  training_sample_n: 200000
+  sample_oversample: 4
+  reservoir_seed: 42
+  sample_expected_lines: 13600000000
+  sample_file_parallel: 4
+  sample_decompress_threads: 7
+  lbzip2_exe: lbzip2                       # resolved by scripts/configure_local.py
+
+docking:
+  active_percent: 1.0
+  exhaustiveness: 4
+  redock_exhaustiveness: 8
+  num_modes: 1
+  workers: 28
+  embed_optimize: false
+  cpu_per_ligand: 1
+  vina_exe: vina
+  meeko_ligand_exe: mk_prepare_ligand.py
+
+ml:
+  radius: 2
+  nbits: 2048
+  include_descriptors: true
+  split:
+    train: 0.65
+    validation: 0.15
+    calibration: 0.10
+    test: 0.10
+  primary_metric: average_precision
+  benchmark_max_rows: 250000
+  slow_model_max_rows: 20000
+  svm_max_rows: 5000
+  knn_max_rows: 20000
+  multinom_max_rows: 40000
+  dl_epochs: 8
+  dl_batch_size: 2048
+  dl_patience: 3
+  dl_max_rows: 60000
+  dl_learning_rate: 0.001
+  # Models that can score the multi-billion library inside the time budget.
+  # The other classifiers are still trained and reported.
+  production_eligible:
+    - logistic_regression
+    - multinom_reg
+    - gradient_boosting
+    - naive_bayes
+    - lda
+    - decision_tree
+    - mlp
+    - realmlp
+    - tabular_resnet
+  conformal_epsilon: 0.15
+  inference_chunk_size: 4000
+  inference_workers: 26
+  reader_workers: 2
+  screen_top_k: 50000
+  keep_min_probability: 0.0
+
+redock:
+  max_hits: 50000
+
+admet:
+  enabled: true
+  exe: admet_predict
+  hard_filters:
+    max_hERG_probability: 0.50
+    max_AMES_probability: 0.50
+    max_hepatotoxicity_probability: 0.50
+  keep_top_n: 100000
+
+clustering:
+  fingerprint_radius: 2
+  fingerprint_nbits: 2048
+  tanimoto_cutoff: 0.55
+  keep_per_cluster: 1
+  max_input: 100000
+
+gnina:
+  enabled: false
+  exe: gnina
+  cnn_scoring: rescore
+  max_input: 5000
+
+boltz:
+  enabled: true
+  exe: boltz                               # resolved by scripts/configure_local.py
+  model: boltz2
+  accelerator: gpu
+  devices: 1
+  max_input: 200
+  recycling_steps: 3
+  sampling_steps: 200
+  diffusion_samples: 1
+  diffusion_samples_affinity: 5
+  use_msa_server: false
+  use_kernels: false
+  seed: 42
+
+md:
+  enabled: true
+  python: python                           # resolved to the pdac-md env by scripts/configure_local.py
+  short_ns: 100.0
+  long_ns: 100.0
+  max_short: 20
+  max_long: 0
+
+mmpbsa:
+  enabled: true
+  exe: MMPBSA.py
+  antechamber: antechamber
+  tleap: tleap
+  input_file: mmpbsa.in
+  max_input: 20
+
+retrosynthesis:
+  enabled: true
+  python: python                           # resolved to the retrochimera env by scripts/configure_local.py
+  model_dir: external/retrochimera_checkpoints   # download the USPTO-50K checkpoint here
+  checkpoint: USPTO-50K
+  inventory: data/purchasable/retrostar_inventory.smi
+  max_input: 50
+  time_limit_s: 60
+  num_results: 10
+  max_depth: 6
+  limit_iterations: 100000
+  limit_model_calls: 100000
+  stop_on_first_solution: true
+
+# Shortlist-only stage. The 13.6B screen stays on KRAS G12D (7RPZ).
+# After clustering, the same box is used on the aligned resistance panel.
+resistance:
+  enabled: true
+  panel: config/pdb_panel.tsv
+  max_input: 200
+  exhaustiveness: 8
+  python: python                           # resolved to the pdac-md env by scripts/configure_local.py
+  meeko_receptor_exe: mk_prepare_receptor.py
+  primary_gdp: 7RPZ
+  primary_active: 7T47
+  wt: 6MBU
+  min_selectivity_margin_kcal: 1.0
+  max_resistance_penalty_kcal: 1.5
+  weights:
+    g12d_affinity: 0.45
+    wt_selectivity: 0.25
+    resistance_robustness: 0.30
+
+ranking:
+  weights:
+    ml_probability: 1.0
+    docking_score: 1.0
+    gnina_cnn_score: 1.0
+    admet_pass_fraction: 0.8
+    G12D_mean_affinity: 0.9
+    WT_selectivity_margin: 0.7
+    resistance_worst_penalty: 0.8
+    boltz_affinity_probability: 0.6
+    boltz_affinity_pred_value: 0.6
+    md_stability: 0.6
+    mmgbsa: 0.8
+    synthetic_accessibility: 0.5
+    retrosynthesis_score: 0.6
+  final_n: 50

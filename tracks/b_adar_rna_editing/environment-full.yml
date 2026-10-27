@@ -1,0 +1,23 @@
+name: kras-adar-full
+channels: [conda-forge, bioconda, defaults]
+dependencies:
+  - python>=3.11
+  - pip
+  - numpy
+  - scipy
+  - scikit-learn
+  - joblib
+  - pyyaml
+  - gemmi
+  - pysam
+  - mdtraj
+  - openmm
+  - viennarna
+  - bowtie2
+  - samtools
+  - bwa-mem2
+  - bcftools
+  - pip:
+      - artifact-tool
+      - boltz
+# GATK, VEP caches, licensed AmberTools and modified residue parameters require separate setup.

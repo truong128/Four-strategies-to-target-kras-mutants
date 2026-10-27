@@ -1,0 +1,17 @@
+pdb_id	label	state	role	mutation	source_type	notes
+7RPZ	G12D_GDP_MRTX1133	GDP	primary	G12D	experimental	1.30 A; reference Switch-II-pocket complex; ligand 6IC=MRTX1133
+7T47	G12D_GppCp_MRTX1133	GTP_like	primary	G12D	experimental	1.27 A; active-like nucleotide state with MRTX1133
+6MBU	WT_GDP	GDP	counter_screen	WT	experimental	1.45 A; wild-type KRAS GDP/Mg; aligned to 7RPZ before docking
+9U8J	G12D_Y96D_MRTX1133	GDP	resistance	G12D/Y96D	experimental	1.34 A; experimental resistance complex
+9U95	G12D_Q99L_MRTX1133	GDP	resistance	G12D/Q99L	experimental	1.75 A; experimental resistance complex
+9U99	G12D_E62K_MRTX1133	GDP	resistance	G12D/E62K	experimental	2.50 A; experimental resistance complex
+9U97	G12D_G13D_MRTX1133	GDP	resistance	G12D/G13D	experimental	1.79 A; experimental secondary-mutant complex
+MODEL_V9E	G12D_V9E_model	GDP	resistance	G12D/V9E	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen; no experimental complex asserted
+MODEL_V9W	G12D_V9W_model	GDP	resistance	G12D/V9W	modeled_from_7RPZ	Validated resistant variant; V9W especially refractory in 2024 screen
+MODEL_V9Q	G12D_V9Q_model	GDP	resistance	G12D/V9Q	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen
+MODEL_G13P	G12D_G13P_model	GDP	resistance	G12D/G13P	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen
+MODEL_T58Y	G12D_T58Y_model	GDP	resistance	G12D/T58Y	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen
+MODEL_R68G	G12D_R68G_model	GDP	resistance	G12D/R68G	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen
+MODEL_Y96W	G12D_Y96W_model	GDP	resistance	G12D/Y96W	modeled_from_7RPZ	Validated resistant variant from mutagenesis screen
+MODEL_H95Q	G12D_H95Q_model	GDP	resistance	G12D/H95Q	modeled_from_7RPZ	Mechanistic selectivity/resistance stress-test; literature-supported
+MODEL_H95L	G12D_H95L_model	GDP	resistance	G12D/H95L	modeled_from_7RPZ	Mechanistic selectivity/resistance stress-test; literature-supported

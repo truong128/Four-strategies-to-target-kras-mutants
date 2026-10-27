@@ -1,0 +1,76 @@
+# Science-first one-command workflow. All paths relative to the package root unless absolute.
+# Start with ./run_all.sh full-e2e --config config/full_project.yaml
+# Requires YOUR inputs for biological/physical stages. No placeholder sequences are considered patient data.
+out: results/full_e2e
+# Supply FASTQ inputs for tumor and matched normal if running from sequencing reads.
+# Or supply validated, indexed BAM paths to the somatic caller.
+somatic:
+  reference_fasta: null # GRCh38 reference FASTA
+  tumor_fastq: {read1: null, read2: null, sample_id: TUMOR}
+  normal_fastq: {read1: null, read2: null, sample_id: NORMAL}
+  known_sites: null
+  tumor_bam: null
+  normal_bam: null
+  tumor_sample: TUMOR
+  normal_sample: NORMAL
+  intervals: null
+  germline_resource: null
+  panel_of_normals: null
+  orientation_priors: false  # Enable for FFPE-sensitive read orientation artifact modeling
+  contamination_table: null # User-supplied GATK CalculateContamination result
+  annotate_vcf: null
+  vep_cache: null
+  annotated_vcf: null # VEP-annotated VCF to generate KRAS variant panel
+  assembly: GRCh38
+
+discovery:
+  transcript: ENST00000256078
+  variants_csv: null # REQUIRED real panel; alternatively use somatic.annotated_vcf. NEVER automatically use config/variants.csv
+  allow_synthetic_panel: false
+  cds_fasta: null                    # verified, versioned MANE KRAS CDS file; null requires Ensembl REST
+  lengths: [33, 40, 59]
+
+restore2:
+  publisher_dir: reference/publisher
+  supplement_xlsx: null # source_material/41467_2025_64434_MOESM3_ESM.xlsx if refresh needed
+  source_xlsx: null     # source_material/41467_2025_64434_MOESM6_ESM.xlsx if refresh needed
+
+offtarget:
+  transcriptome_fasta: null   # stranded HUMAN transcriptome (cDNA) FASTA in selected GRCh38 release
+  index_prefix: null  # derived within unique run output directory; no stale index reuse
+
+structure:
+  adar_fasta: null    # Exact ADAR1 p110 or p150 sequence from verified isoform
+  msa: auto           # auto requires --use-msa-server during prediction; or path to A3M
+  use_msa_server: true
+  allow_single_sequence: false
+  devices: 1
+  samples: 5
+
+forcefield:
+  build_specs_csv: null  # CSV: construct_id,pdb,modified,libs,frcmods,validation_json,salt_pairs
+  padding_A: 12
+  salt_molar: 0.15
+
+md:
+  jobs_csv: null # CSV: construct_id,topology_prmtop,coordinates_inpcrd,modified,validation_json
+  auto_jobs_from_forcefield: true # only when forcefield was executed + separate post-build MD evidence
+  platform: auto
+  replicates: 3
+  equil_steps: 250000
+  production_steps: 5000000 # 10 ns at 2 fs; set 50000000 for 100 ns
+
+machine_learning:
+  curated_labels_csv: null             # actual assays linked to exact construct + target/context
+  curated_chemistry_positions_csv: null
+  external_labels_csv: null # independent target group labels, never overlap with training
+  external_chemistry_positions_csv: null
+
+ranking:
+  experimental_csv: null               # guide_id, editing, WT bystanders, KRAS-GTP etc
+
+experimental_rnaseq:
+  treated_bam: null
+  control_bam: null
+  reference_fasta: null
+  sites_csv: null # genomic-site table; A/G fractions are NOT mutant-specific editing rates

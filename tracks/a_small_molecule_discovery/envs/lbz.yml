@@ -1,0 +1,4 @@
+name: lbz
+channels: [conda-forge]
+dependencies:
+  - lbzip2            # multi-core bzip2: streams the Enamine .cxsmiles.bz2 shards without decompressing to disk

@@ -1,0 +1,19 @@
+Component,Version tested,Used by,Environment
+Python,3.11 / 3.12,all tracks,"pdac-dd, pdac-md, kras-adar"
+Nextflow,26.04,Track A,system
+RDKit,2026.03,"A, A2","pdac-dd, pdac-md"
+AutoDock Vina,1.2.7,"A, A2",pdac-dd
+Meeko,0.8.0,"A, A2",pdac-dd
+scikit-learn / XGBoost / LightGBM / CatBoost,1.9 / 3.4 / 4.7 / 1.2,A (classifiers),pdac-dd
+PyTorch,2.11 (CUDA 12.8 wheels),"A (neural nets, Boltz-2, RetroChimera)","pdac-dd, boltz2, retrochimera"
+ADMET-AI,2.0,"A, A2",admet-ai
+Boltz-2,2.2,"A, B, extensions","boltz2, kras-adar"
+OpenMM / PDBFixer,8.6 / 1.12,"A (MD, receptors)",pdac-md
+OpenFF toolkit / forcefields,0.18 / 2026.01,A (ligand parameters),pdac-md
+AmberTools,26.0,A (MM/GBSA),pdac-md or amber
+RetroChimera / Syntheseus,0.1 dev / 0.9,A (retrosynthesis),retrochimera
+ViennaRNA,2.4.7,B,kras-adar
+Bowtie2,2.5.5,B,kras-adar
+samtools / bcftools,current conda-forge,B,kras-adar
+RFD4-Proteina,upstream main,C,external/rfd4-proteina (.venv)
+GNINA,1.3,"A (allele CNN rescoring, optional)",binary on PATH or GNINA_EXE

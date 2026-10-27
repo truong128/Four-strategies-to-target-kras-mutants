@@ -1,0 +1,8 @@
+Variant,cDNA change,Direct A-to-I reversal,Reason
+G12D,c.35G>A,Yes,mutant A is the editing target
+G12S,c.34G>A,Yes,mutant A is the editing target
+G13D,c.38G>A,Yes,mutant A is the editing target
+G12V,c.35G>T,No,G>T cannot be undone by A-to-I
+G12C,c.34G>T,No,G>T cannot be undone by A-to-I
+G12R,c.34G>C,No,G>C cannot be undone by A-to-I
+Q61H,c.183A>C / c.183A>T,No,mutant base is not A

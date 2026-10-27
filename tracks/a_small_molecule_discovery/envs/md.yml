@@ -1,0 +1,19 @@
+name: pdac-md
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - openmm
+  - openmmforcefields
+  - openff-toolkit
+  - openff-forcefields
+  - pdbfixer
+  - ambertools        # cpptraj, MMPBSA.py, antechamber, tleap (also usable as the Amber env)
+  - parmed
+  - mdtraj
+  - rdkit
+  - biopython
+  - gemmi
+  - numpy
+  - pandas
+  - scikit-learn
+  - pyyaml

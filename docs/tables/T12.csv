@@ -1,0 +1,10 @@
+Limitation,Consequence,Mitigation in the repository
+Docking scores are not binding free energies,ranks are heuristics,rank-based scoring; MD and MM/GBSA on a short list only
+WT counter-screen receptor can be apo,WT margin is confounded by conformation,documented; use a matched WT receptor (9O0N or a D12G back-mutation of 7RPZ)
+Modeled mutants are unrelaxed single substitutions,stress tests only,"labeled MODEL_* everywhere, never reported as experimental"
+Vina cannot model covalent chemistry (G12C),pose is noncovalent,documented in the allele panel notes
+Boltz-2 geometry is not catalysis,no editing claim from structure,Track B reports geometry only
+ViennaRNA is not modification-aware,chemistry effects on folding are unknown,labeled in outputs
+"Chemistry transfer is from RESTORE 2.0, not KRAS",unvalidated on KRAS,provenance keys on every transferred pattern
+Editing ML needs curated labels,no predictor without data,the stage abstains explicitly
+Everything is computed,no biological claim,Figure 8 and docs/SCIENTIFIC_CAVEATS.md

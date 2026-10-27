@@ -1,0 +1,25 @@
+name: kras-adar
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - joblib
+  - pyyaml
+  - biopython
+  - gemmi
+  - pysam
+  - mdtraj
+  - openmm
+  - ambertools
+  - viennarna
+  - bowtie2
+  - samtools
+  - bcftools
+  - pip:
+      - boltz
+# Not installable from conda: GATK, Ensembl VEP caches, modified-residue Amber parameters.
+# Optional: `artifact-tool` for scripts/ingest_publisher_workbooks.py (see environment-full.yml).

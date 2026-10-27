@@ -1,0 +1,6 @@
+Codon,Alleles,Pocket,Hotspot rule
+12,"G12D, G12C, G12V, G12R, G12A, G12S, G12F (+ WT)",P-loop / switch II,mutant side chain + two nearest side chains
+13,"G13D, G13C, G13R",P-loop / switch II,mutant side chain + two nearest side chains
+61,"Q61H, Q61L, Q61R, Q61K",P-loop / switch II,mutant side chain + two nearest side chains
+117,K117N,"G4 motif, nucleotide base side",local nucleotide-site residues
+146,"A146T, A146V","G5 motif, nucleotide cleft",residues pointing into the cleft

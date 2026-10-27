@@ -1,0 +1,6 @@
+&general
+  startframe=1, interval=5, verbose=1,
+/
+&gb
+  igb=5, saltcon=0.150,
+/

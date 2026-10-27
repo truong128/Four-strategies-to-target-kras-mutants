@@ -1,0 +1,38 @@
+project: KRAS_G12D_PDAC_resistance_robust_DD
+track: noncovalent_switch_II_pocket
+reference_pdb: 7RPZ
+reference_ligand_resname: 6IC
+reference_ligand_ccd: 6IC
+reference_chain: A
+pH: 7.4
+
+grid:
+  size_x: 24.0
+  size_y: 24.0
+  size_z: 24.0
+  padding_note: "Centered automatically on 6IC in aligned 7RPZ; increase to 28-30 A if screening diverse chemotypes."
+
+docking:
+  exhaustiveness: 16
+  num_modes: 9
+  energy_range: 4
+  cpu_per_job: 4
+  parallel_jobs: 4
+  seed: 20261007
+
+ranking:
+  primary_gdp: 7RPZ
+  primary_active: 7T47
+  wt: 6MBU
+  min_selectivity_margin_kcal: 1.0
+  max_resistance_penalty_kcal: 1.5
+  weights:
+    g12d_affinity: 0.45
+    wt_selectivity: 0.25
+    resistance_robustness: 0.30
+
+admet:
+  enabled: true
+
+report:
+  top_n: 50

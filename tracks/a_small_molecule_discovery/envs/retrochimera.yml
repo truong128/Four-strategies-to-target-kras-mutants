@@ -1,0 +1,13 @@
+# RetroChimera (single-step retrosynthesis) + Syntheseus (Retro* search).
+# Create the environment, then install both packages from source; see docs/INSTALL.md section "RetroChimera".
+name: retrochimera
+channels: [conda-forge, pytorch]
+dependencies:
+  - python=3.11
+  - pip
+  - rdkit
+  - numpy
+  - pandas
+  - scikit-learn
+  - pip:
+      - torch   # choose the build that matches your CUDA driver

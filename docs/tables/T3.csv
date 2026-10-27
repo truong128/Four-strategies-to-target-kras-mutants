@@ -1,0 +1,14 @@
+Criterion,Weight,Direction
+ml_probability,1.0,higher
+docking_score,1.0,lower
+gnina_cnn_score,1.0,higher
+admet_pass_fraction,0.8,higher
+G12D_mean_affinity,0.9,lower
+WT_selectivity_margin,0.7,higher
+resistance_worst_penalty,0.8,lower
+boltz_affinity_probability,0.6,higher
+boltz_affinity_pred_value,0.6,lower
+md_stability,0.6,higher
+mmgbsa,0.8,lower
+synthetic_accessibility,0.5,higher
+retrosynthesis_score,0.6,higher

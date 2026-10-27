@@ -1,0 +1,22 @@
+name: krasg12d_e2e
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - tabulate
+  - pyyaml
+  - requests
+  - biopython
+  - rdkit
+  - openbabel
+  - vina
+  - pdbfixer
+  - openmm
+  - pip
+  - pip:
+      - admet-ai

@@ -1,0 +1,12 @@
+{
+  "validated": false,
+  "stereochemistry_resolved": false,
+  "charge_and_torsion_checked": false,
+  "atom_mapping_checked": false,
+  "evidence": "Supply independently verified modified-residue parameter evidence. Do not flip booleans without validation.",
+  "pdb_sha256": "",
+  "lib_sha256": {},
+  "frcmod_sha256": {},
+  "topology_sha256": "",
+  "coordinates_sha256": ""
+}

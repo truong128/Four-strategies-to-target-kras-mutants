@@ -1,0 +1,5 @@
+Track,Modality,Question it answers,Engine,Entry point
+A,Small molecules,Which purchasable molecules in a 13.6 billion library are worth buying for KRAS G12D?,Nextflow DSL2 + Python,scripts/run_track_a.sh screen --library PATH
+A2,Small molecules (light),Rank up to about 1e5 molecules against a resistance-aware receptor ensemble in one command,Python scripts 00 to 09,scripts/run_track_a2.sh
+B,ADAR RNA editing,"Which ADAR-recruiting guide RNAs can reverse a G>A KRAS driver, and what do they hit elsewhere?",Python + Bowtie2 + ViennaRNA + Boltz-2,scripts/run_track_b.sh plan | full
+C,Peptides,Which short peptides does a generative model propose for each of 18 KRAS allele targets?,RFD4-Proteina (external),scripts/run_track_c.sh design
