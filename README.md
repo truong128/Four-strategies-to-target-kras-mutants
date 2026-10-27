@@ -1,6 +1,6 @@
 # Two Therapeutic Strategies to Target KRAS Mutants
 
-### An open, end-to-end computational platform that screens 13.6 billion molecules *and* designs ADAR RNA editors against the same pancreatic cancer driver
+### An open, end-to-end computational platform for drug discovery, drug repurposing and antisense therapeutics: it screens 13.6 billion molecules *and* designs ADAR-recruiting guide RNAs against the same pancreatic cancer driver
 
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![workflow](https://img.shields.io/badge/workflow-Nextflow%20DSL2-23aa62)
@@ -10,10 +10,12 @@
 
 > **13.6 billion molecules. One mutation. Two ways to attack it.**
 >
+> *Drug discovery  |  Drug repurposing  |  Antisense therapeutics*
+>
 > Oncogenic KRAS mutations sit in roughly nine of ten pancreatic ductal adenocarcinomas (PDAC), G12D is the most frequent variant, and for decades KRAS was called undruggable.
 > This repository gives you the complete computational playbook for two independent routes to the same target:
 > **(A)** find a small molecule in the largest purchasable chemical space on Earth, and
-> **(B)** skip the protein entirely and recode the mutant *mRNA* with the cell's own editing enzyme, ADAR.
+> **(B)** skip the protein entirely and recode the mutant *mRNA* with antisense guide RNAs that recruit the cell's own editing enzyme, ADAR.
 > A third lane (**C**) designs short peptide binders for 18 KRAS alleles.
 
 Every stage is scripted, parameterized and gated. Every claim boundary is written down. **No data, no results, no patient material ships in this repository**: only code, configuration, documentation, figures and tables describing the method.
@@ -40,8 +42,9 @@ Every stage is scripted, parameterized and gated. Every claim boundary is writte
 | Track | Modality | What it does | Run it |
 |---|---|---|---|
 | **A** | Small molecules | ML-guided ultra-large docking, ADMET, resistance panel, Boltz-2, MD, MM/GBSA, retrosynthesis, Pareto ranking | `scripts/run_track_a.sh screen --library PATH` |
+| **A+** | Drug repurposing | Approved drugs against KRAS G12D with Boltz-2, then across 17 other alleles | `FDA_DRUG_PKL=... scripts/run_track_a.sh repurpose` |
 | **A2** | Small molecules (light) | Ten-script ensemble-docking triage for up to about 1e5 molecules | `scripts/run_track_a2.sh` |
-| **B** | ADAR RNA editing | Variant to ranked ADAR-recruiting guide RNAs, with off-target and structure stages | `scripts/run_track_b.sh plan` |
+| **B** | ADAR RNA editing (antisense) | Variant to ranked ADAR-recruiting antisense guide RNAs, with off-target and structure stages | `scripts/run_track_b.sh plan` |
 | **C** | Peptides | RFdiffusion3 / Proteina designs for 18 KRAS allele targets | `scripts/run_track_c.sh design` |
 
 ![Figure 2](docs/figures/fig2_trackA_funnel.png)
@@ -79,7 +82,7 @@ Requirements: Linux, conda or mamba (Miniforge), git, [Nextflow](https://www.nex
 
 ![Figure 5](docs/figures/fig5_trackB_flow.png)
 
-*Figure 5. Thirteen ordered stages. Each writes to a fresh directory and the preflight refuses stale inputs.*
+*Figure 5. The Track B flow in thirteen steps, grouped into three phases; Table T6 lists the corresponding pipeline stages. Each run writes to a fresh directory and the preflight refuses stale inputs.*
 
 ![Figure 6](docs/figures/fig6_adar_principle.png)
 
@@ -121,26 +124,22 @@ All tables are generated from the shipped configuration by [`docs/make_tables.py
 ```text
 two-strategies-to-target-kras-mutants/
   README.md                        you are here
+  LICENSE, CITATION.cff, Makefile
   docs/
     INSTALL.md                     environments, GPUs, external tools
     STEP_BY_STEP.md                every step of every track, with commands, inputs and outputs
     DATA_ACCESS.md                 what is NOT included and where to obtain it
     SCIENTIFIC_CAVEATS.md          limits of the method, in plain language
-    PUSH_TO_GITHUB.md              publish this repository
     figures/                       make_figures.py + PNG + SVG
     tables/                        T1..T12 as CSV, and TABLES.md
     make_tables.py
-  scripts/                         bootstrap, fetch_public_inputs, run_track_*, run_all, check_release
+  scripts/                         bootstrap, fetch_public_inputs, run_track_*, run_all
   tracks/
     a_small_molecule_discovery/    Nextflow main.nf, config.yaml, scripts/
     a2_ensemble_docking_triage/    scripts 00 to 09
     b_adar_rna_editing/            guide design, off-target, structure, tests
     c_peptide_binders/             target builder + RFD4 launcher
 ```
-
-## What is deliberately missing
-
-Raw or processed results, trained models, docked poses, trajectories, ranked compound lists, guide sequences from real runs, patient or cell-line data, vendor libraries, third-party weights and publisher supplements. `.gitignore` blocks them by pattern and `scripts/check_release.sh` fails the push if any slip through. This keeps the repository small, legally clean and safe to share before your own results are published.
 
 ## Reproducibility and honesty
 

@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 """Benchmark the 16 BRFSS classifiers plus four tabular neural nets.
 
-The 16 names and hyperparameters follow
-https://github.com/truong128/brfss-scd-ml-benchmark
-(shared_scripts/run_ml_pipeline.py get_classifiers). Gradient boosting is the
-histogram booster used by that pipeline on CPU, which is also fast enough to
+The 16 names and hyperparameters follow the classifier set (get_classifiers)
+of the author's earlier tabular benchmark. Gradient boosting is the
+histogram booster used there on CPU, which is also fast enough to
 score a multi-billion library. The four nets are ft_transformer,
 ft_transformer_lite, realmlp, and tabular_resnet.
 """

@@ -2,11 +2,13 @@
 # Track A: ML-guided ultra-large docking campaign (Nextflow).
 #
 #   scripts/run_track_a.sh smoke                       # unit smoke test, no external tools
-#   scripts/run_track_a.sh toy                         # 5-molecule toy library through library QC only
+#   scripts/run_track_a.sh toy                         # 20-molecule toy library through library QC only
 #   scripts/run_track_a.sh screen --library PATH       # full campaign; PATH = directory of Enamine
 #                                                      #   *.cxsmiles.bz2 shards, or any .smi/.csv library
 #   scripts/run_track_a.sh screen --library PATH --no-resume
 #   scripts/run_track_a.sh alleles                     # 18-allele dock + Boltz-2 panel on the final leads
+#   FDA_DRUG_PKL=/path/drugs.pkl scripts/run_track_a.sh repurpose
+#                                                      # drug repurposing: approved drugs vs G12D, then 17 other alleles
 #
 # Extra arguments after the mode are passed to `nextflow run` (for example -with-report).
 set -euo pipefail
@@ -65,5 +67,25 @@ PY
       "$(env_exe boltz2 python)" scripts/fetch_kras_msa.py
       "$DD_PY" scripts/boltz_allele_panel.py --config config.local.yaml )
     ;;
-  *) die "usage: run_track_a.sh smoke | toy | screen --library PATH | alleles" ;;
+  repurpose)
+    [[ -n "${FDA_DRUG_PKL:-}" || -n "${FDA_DRUG_CSV:-}" ]] || die "Set FDA_DRUG_PKL (columns drug_id, drug_name, smile) and/or FDA_DRUG_CSV (columns name, smiles). See docs/DATA_ACCESS.md"
+    BOLTZ_PY="$(env_exe boltz2 python)"
+    export PATH="$(dirname "$BOLTZ_PY"):$DD_BIN:$PATH"
+    log "Repurposing: approved drugs vs KRAS G12D (Boltz-2), keep affinity probability > 0.5, then 17 other alleles"
+    "$DD_PY" "$REPO/scripts/configure_local.py"
+    ( cd "$A"
+      "$DD_PY" scripts/dock_kras_alleles.py --prepare --config config.local.yaml
+      "$BOLTZ_PY" scripts/fetch_kras_msa.py
+      "$DD_PY" scripts/boltz_g12d_fda.py
+      "$DD_PY" -c '
+import pandas as pd
+d = "results/g12d_fda_boltz_msa/"
+t = pd.read_csv(d + "g12d_fda_boltz.csv")
+k = t[t.boltz_affinity_probability > 0.5]
+k.to_csv(d + "g12d_passed_gt_0.5.csv", index=False)
+print("kept %d of %d drugs with boltz_affinity_probability > 0.5" % (len(k), len(t)))
+'
+      "$DD_PY" scripts/boltz_fda_passed_alleles.py )
+    ;;
+  *) die "usage: run_track_a.sh smoke | toy | screen --library PATH | alleles | repurpose" ;;
 esac

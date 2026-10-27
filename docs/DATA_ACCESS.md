@@ -8,8 +8,8 @@ This repository contains **no datasets, results, models or third-party files**. 
 |---|---|---|---|
 | PDB entries 7RPZ, 7T47, 6MBU, 9U8J, 9U95, 9U99, 9U97 and the allele crystals in `config/kras_allele_panel.tsv` | RCSB PDB | `fetch_structures.py`, `build_resistance_panel.py`, `dock_kras_alleles.py` | PDB open data (CC0) |
 | Reference ligand CCD 6IC | RCSB ligand service | `fetch_structures.py` | PDB open data |
-| Ensembl release 113 cDNA + GTF (GRCh38) | ftp.ensembl.org | `scripts/fetch_ensembl_reference.sh` | Ensembl terms of use |
-| ADAR1 UniProt P55265 | rest.uniprot.org | `scripts/setup_real_run.py` | CC BY 4.0 |
+| Ensembl release 113 cDNA + GTF (GRCh38) | ftp.ensembl.org | `tracks/b_adar_rna_editing/scripts/fetch_ensembl_reference.sh` | Ensembl terms of use |
+| ADAR1 UniProt P55265 | rest.uniprot.org | `tracks/b_adar_rna_editing/scripts/setup_real_run.py` | CC BY 4.0 |
 | ColabFold MSAs for KRAS alleles | public MMseqs2 server | `fetch_kras_msa.py`, Boltz `--use_msa_server` | sends the KRAS or ADAR1 sequence to a third party; avoid for confidential sequences and supply your own A3M instead |
 
 ## Inputs you must obtain yourself
@@ -29,9 +29,3 @@ This repository contains **no datasets, results, models or third-party files**. 
 ## Software licenses to check before you redistribute outputs (indicative only)
 
 AutoDock Vina (Apache-2.0), Meeko (LGPL-2.1), RDKit (BSD-3), OpenMM (MIT/LGPL), AmberTools (mixed; free for academic use, see AmberTools license), ADMET-AI (MIT), Boltz (MIT), RetroChimera and Syntheseus (MIT), ViennaRNA (custom academic license), Bowtie2 (GPL-3), RFD4-Proteina (see upstream LICENSE), GNINA (GPL-2/Apache-2). Verify current terms upstream.
-
-## How the repository keeps data out
-
-1. `.gitignore` blocks results, runs, work dirs, structures, references, models, omics files, spreadsheets and archives by pattern.
-2. `scripts/check_release.sh` fails if any tracked or to-be-tracked file is large, binary-looking, matches a forbidden extension, contains an absolute home path, a token-like string, or a dash character.
-3. Run it before every push (`docs/PUSH_TO_GITHUB.md`).

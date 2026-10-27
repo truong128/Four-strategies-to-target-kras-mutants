@@ -32,7 +32,7 @@ Entry point: `scripts/run_track_a.sh screen --library PATH`. Behind it: `nextflo
 4. Meeko writes `structures/KRAS_G12D.pdbqt` for the box in `config.yaml` (center 1.714, 4.927, -23.164; size 24 A).
 5. Writes the reference ligand (`7RPZ_MRTX1133.pdb/.sdf`) for redocking QC.
 
-**Gate (recommended):** `scripts/redocking_qc.sh` redocks the crystal ligand; compute an atom-mapped heavy-atom RMSD to the crystal pose. Do not accept a receptor by score alone.
+**Gate (recommended):** `tracks/a_small_molecule_discovery/scripts/redocking_qc.sh` redocks the crystal ligand; compute an atom-mapped heavy-atom RMSD to the crystal pose. Do not accept a receptor by score alone.
 
 ### A.2 Library access
 
@@ -42,7 +42,7 @@ Non-streaming libraries (`.smi`, `.csv`) are standardized first (`prepare_librar
 
 ### A.3 Configure for this machine
 
-`python scripts/configure_local.py` writes `tracks/a_small_molecule_discovery/config.local.yaml` with absolute interpreter paths for each conda environment (git-ignored). Then edit the **hardware knobs** in `config.yaml` (workers, threads, chunk sizes) to match your CPU; the defaults target a 16-core / 32-thread workstation.
+`python scripts/configure_local.py` writes `tracks/a_small_molecule_discovery/config.local.yaml` with absolute interpreter paths for each conda environment (git-ignored). Then edit the **hardware knobs** in `config.yaml` (workers, threads, chunk sizes) to match your CPU; the defaults assume a workstation with about 32 threads (28 docking workers, 26 scoring processes plus 2 readers).
 
 ### A.4 Launch
 
@@ -91,6 +91,8 @@ scripts/run_track_a.sh alleles
 3. `boltz_allele_panel.py` runs Boltz-2 affinity for every lead on every allele (leads x 18 jobs).
 
 ### A.6 Extension: repurposing screen of approved drugs
+
+One command, after setting `FDA_DRUG_PKL` and/or `FDA_DRUG_CSV`: `scripts/run_track_a.sh repurpose`. The manual steps it runs are:
 
 ```bash
 export FDA_DRUG_PKL=/path/to/approved_drugs.pkl     # columns: drug_id, drug_name, smile
@@ -147,8 +149,8 @@ Entry point: `scripts/run_track_b.sh <mode>`. Behind it: `tracks/b_adar_rna_edit
 scripts/run_track_b.sh setup
 ```
 
-1. `scripts/fetch_ensembl_reference.sh` downloads Ensembl 113 cDNA and GTF, strips FASTA headers to bare `ENST` ids, indexes with samtools.
-2. `scripts/setup_real_run.py` (via `./run_all.sh setup-real`) cuts the KRAS-4B CDS (ENST00000311936) from the transcriptome using the GTF CDS and stop-codon features, validates it (ATG start, one stop, human KRAS N-terminus, codon 12 = Gly), builds the transcript-to-gene map, and downloads UniProt P55265 to write p150, p110 and the 716-1226 construct FASTAs with catalytic-residue checks (H910, E912, C966, C1036).
+1. `tracks/b_adar_rna_editing/scripts/fetch_ensembl_reference.sh` downloads Ensembl 113 cDNA and GTF, strips FASTA headers to bare `ENST` ids, indexes with samtools.
+2. `tracks/b_adar_rna_editing/scripts/setup_real_run.py` (via `./run_all.sh setup-real`) cuts the KRAS-4B CDS (ENST00000311936) from the transcriptome using the GTF CDS and stop-codon features, validates it (ATG start, one stop, human KRAS N-terminus, codon 12 = Gly), builds the transcript-to-gene map, and downloads UniProt P55265 to write p150, p110 and the 716-1226 construct FASTAs with catalytic-residue checks (H910, E912, C966, C1036).
 
 ### B.2 Variants and preflight
 
@@ -158,7 +160,7 @@ Edit `config/kras_pdac_variants.csv` (`variant_id,hgvs_c`). Then:
 scripts/run_track_b.sh preflight
 ```
 
-17 checks: fresh output directory, free disk, variant table, CDS sanity, **every HGVS reference base matches the CDS**, transcriptome and gene map, Bowtie2, ADAR FASTA, Boltz and weights, GPU, RNAfold/RNAcofold. **Gate:** zero FAIL.
+Checks include: fresh output directory, free disk, variant table, CDS sanity, **every HGVS reference base matches the CDS**, transcriptome and gene map, Bowtie2, ADAR FASTA, Boltz and weights, GPU, RNAfold/RNAcofold. **Gate:** zero FAIL.
 
 ### B.3 Design and screening
 

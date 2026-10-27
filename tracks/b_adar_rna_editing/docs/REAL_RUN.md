@@ -1,6 +1,6 @@
-# v1.5 real-run readiness (KRAS variants in PDAC)
+# Real-run setup (KRAS variants in PDAC)
 
-## What changed
+## What the setup does
 
 - `scripts/setup_real_run.py` builds the KRAS CDS (strand-aware, with stop codon, validated: 188 aa, codon 12 = GGT), a transcript-to-gene map from the GTF, and the ADAR1 FASTAs (UniProt P55265; p150, p110 = isoform 5 residues 296-1226, DRBM3+deaminase 716-1226), each with provenance JSON.
 - Off-target screening is gene-aware: hits carry `gene_name` and `is_on_target_gene`; KRAS isoform hits are excluded from the off-target count, and `offtarget_gene_summary.csv` lists the genes hit. A screened guide with zero hits is reported as 0 (it was previously `NOT_SCREENED`).

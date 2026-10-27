@@ -1,12 +1,11 @@
 # Convenience targets. Every target is a thin wrapper over scripts/.
-.PHONY: help setup smoke figures tables check-release track-a track-a2 track-b track-c
+.PHONY: help setup smoke figures tables track-a track-a2 track-b track-c
 
 help:
 	@echo "make setup          bootstrap environments and fetch public inputs"
 	@echo "make smoke          tests that need no data and no GPU"
 	@echo "make figures        regenerate docs/figures (method schematics)"
 	@echo "make tables         regenerate docs/tables"
-	@echo "make check-release  audit the repository before a push"
 	@echo "make track-b        ADAR guide design (plan only)"
 	@echo "make track-a LIB=/path/to/enamine_real"
 
@@ -22,9 +21,6 @@ figures:
 
 tables:
 	python docs/make_tables.py
-
-check-release:
-	scripts/check_release.sh
 
 track-a:
 	scripts/run_track_a.sh screen --library "$(LIB)"

@@ -9,7 +9,7 @@
 | git, curl, gzip, awk | all | |
 | Nextflow | Track A | `curl -s https://get.nextflow.io \| bash && mv nextflow ~/bin/` (Java 17 or newer) |
 | NVIDIA GPU + recent driver | Boltz-2, MD, RetroChimera, Track C | CUDA 12.8 wheels are installed by default; Blackwell (CUDA 13) works with `use_kernels: false` / `--no_kernels` |
-| 28 or more CPU cores (recommended) | Track A at full scale | lower `docking.workers`, `ml.inference_workers`, `library.sample_*` in `config.yaml` for smaller machines |
+| About 32 CPU threads (the defaults) | Track A at full scale | lower `docking.workers`, `ml.inference_workers`, `library.sample_*` in `config.yaml` for smaller machines |
 | Disk | Track A | about 330 GB for compressed Enamine REAL, plus room for results; Track B needs about 20 GB free (preflight checks) |
 
 ## One command

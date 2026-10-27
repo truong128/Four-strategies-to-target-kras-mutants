@@ -2,8 +2,7 @@
 
 The training step fits 20 models on the docked sample and writes `model_comparison.csv`.
 
-Sixteen names match the BRFSS benchmark
-([truong128/brfss-scd-ml-benchmark](https://github.com/truong128/brfss-scd-ml-benchmark), `get_classifiers`):
+Sixteen names follow the classifier set of the author's earlier tabular benchmark (BRFSS, `get_classifiers`):
 
 1. `logistic_regression`
 2. `multinom_reg`
