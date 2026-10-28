@@ -34,7 +34,7 @@ Every stage is scripted, parameterized and gated. Every claim boundary is writte
 | **Truly ultra-large** | Streams Enamine REAL shards straight from `.cxsmiles.bz2` (never decompressed), trains on a 200,000-molecule docked sample, then lets a calibrated ML ensemble score the whole library. |
 | **ML you can audit** | 20 classifiers, scaffold-separated splits, validation-only model selection, isotonic calibration, class-conditional conformal prediction, **one** locked-test evaluation. |
 | **Resistance-aware from day one** | The shortlist is re-docked across 7 experimental and 9 modeled KRAS resistance receptors plus a wild-type counter-screen, then ranked on affinity, selectivity and robustness. |
-| **A second modality, same rigor** | ADAR guide design with A-to-I correctability checks, bystander maps, chemistry transfer with provenance keys, Bowtie2 transcriptome off-target screening, ViennaRNA and Boltz-2 geometry. |
+| **Four routes, same rigor** | Besides small molecules and repurposing: ADAR guide design with A-to-I correctability checks, bystander maps, chemistry transfer with provenance keys, Bowtie2 transcriptome off-target screening, ViennaRNA and Boltz-2 geometry; and peptide binders for 18 KRAS alleles. |
 | **Honest by construction** | Preflight gates refuse stale outputs, demo data and unverified inputs. Stages abstain instead of guessing. Figure 8 shows exactly where computation ends and biology begins. |
 | **One-command wrappers** | `bootstrap.sh`, `fetch_public_inputs.sh`, `run_track_{a,a2,b,c}.sh` and a single `run_all.sh`. |
 
