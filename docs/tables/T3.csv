@@ -10,5 +10,6 @@ boltz_affinity_probability,0.6,higher
 boltz_affinity_pred_value,0.6,lower
 md_stability,0.6,higher
 mmgbsa,0.8,lower
+openfe_abfe_dg_kcal,0.8,lower
 synthetic_accessibility,0.5,higher
 retrosynthesis_score,0.6,higher

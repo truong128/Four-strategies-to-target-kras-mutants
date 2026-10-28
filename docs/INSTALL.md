@@ -29,11 +29,14 @@ Environments created (names matter; the wrappers look them up):
 | `admet-ai` | `.../envs/admet.yml` | ADMET-AI (`admet_predict`) |
 | `boltz2` | `.../envs/boltz2.yml` | Boltz-2 |
 | `amber` | `.../envs/amber.yml` | MM/GBSA (falls back to `pdac-md`) |
+| `openfe` | `.../envs/openfe.yml` | OpenFE absolute binding free energy, the alchemical check on MM/GBSA (off by default) |
 | `lbz` | `.../envs/lbz.yml` | multi-core `lbzip2` for streaming Enamine shards |
 | `retrochimera` | `.../envs/retrochimera.yml` | retrosynthesis (manual step below) |
 | `krasg12d_e2e` | `tracks/a2_ensemble_docking_triage/environment.yml` | Track A2 |
 | `kras-adar` | `tracks/b_adar_rna_editing/environment-kras-adar.yml` | Track B |
 | RFD4 `.venv` | created by RFD4-Proteina `setup.sh` | Track C |
+
+On an NVIDIA GPU, pin `cuda-version` in the `openfe` environment to the CUDA version your driver supports (`nvidia-smi`, top right); a newer one fails with `CUDA_ERROR_UNSUPPORTED_PTX_VERSION` when OpenMM compiles its kernels.
 
 `scripts/configure_local.py` resolves `admet_predict`, `boltz`, `vina`, Meeko, AmberTools, `lbzip2` and every stage interpreter into `config.local.yaml`, so you do not need to activate environments by hand. Use `PDAC_DD_ENV`, `PDAC_MD_ENV`, `BOLTZ_ENV`, `AMBER_ENV`, `ADMET_ENV`, `RETROCHIMERA_ENV` or `LBZIP2_ENV` if your environments have other names.
 

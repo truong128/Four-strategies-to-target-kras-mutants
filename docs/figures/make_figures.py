@@ -120,7 +120,7 @@ def fig2_funnel():
         ("Diversity clustering", "Tanimoto cutoff 0.55", 34, ORANGE),
         ("Resistance panel + Boltz-2", "up to 200 compounds", 28, PURPLE),
         ("Retrosynthesis (RetroChimera + Retro*)", "50 compounds", 22, PURPLE),
-        ("100 ns OpenMM MD + MM/GBSA", "20 compounds", 16, PURPLE),
+        ("100 ns OpenMM MD + MM/GBSA (+ OpenFE)", "20 compounds; OpenFE optional", 16, PURPLE),
         ("Final ranking (Pareto + rank aggregation)", "50 reported", 11, RED),
     ]
     top, step = 81.0, 6.4

@@ -11,6 +11,7 @@ These are properties of the *method*. They are repeated in outputs where relevan
 | Boltz-2 affinity probability / value | a model prediction of binder likelihood and log10 IC50 (uM) | a measurement; it was not trained on your chemotypes or alleles |
 | OpenMM ligand RMSD | pose stability over the simulated window | affinity or residence time |
 | MM/GBSA | a single, noisy end-point estimate (generalized Born, not PB) | a free-energy difference you can compare across series |
+| OpenFE absolute binding free energy | an alchemical estimate with an uncertainty, only as good as the pose, force field, cofactors and sampling | an experimental affinity; it also needs protonation and cofactors to match the real pocket |
 | RetroChimera route | a model suggestion that can hallucinate reactions | a synthesis plan; a chemist must check it |
 | ADMET-AI | a screening-level prediction | tissue exposure; PDAC stroma makes PK a first-class question |
 | ViennaRNA energy | unmodified RNA thermodynamics | folding of chemically modified guides |

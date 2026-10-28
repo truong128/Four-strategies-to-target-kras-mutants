@@ -67,16 +67,21 @@ stage_rows = [
     ["12", "Retrosynthesis", "synthetic_feasibility.py", "RetroChimera + Syntheseus Retro*", "best docked", "synthesis_scores.csv", "%d compounds, USPTO-50K checkpoint" % cfg["retrosynthesis"]["max_input"]],
     ["13", "Molecular dynamics", "run_md_batch.py, md_openmm.py", "OpenMM, amber14, OpenFF 2.2.1", "top docked + protein", "md_scores.csv", "%d compounds, %d ns" % (cfg["md"]["max_short"], cfg["md"]["short_ns"])],
     ["14", "MM/GBSA", "run_mmpbsa_batch.py, mmgbsa_from_md.py", "AmberTools", "MD trajectories", "mmpbsa_scores.csv", "igb=5, 0.15 M salt; %d compounds" % cfg["mmpbsa"]["max_input"]],
-    ["15", "Final ranking", "final_rank.py", "pandas", "all tables", "ranked and Pareto CSVs", "13 weighted criteria + Pareto front; report %d" % cfg["ranking"]["final_n"]],
+    ["15", "OpenFE absolute binding free energy (optional)", "run_openfe_abfe.py", "OpenFE, OpenMM", "poses + protein", "openfe_abfe.csv", "off by default; %d compounds, %d repeats" % (cfg["openfe"]["max_input"], cfg["openfe"]["protocol_repeats"])],
+    ["16", "Final ranking", "final_rank.py", "pandas", "all tables", "ranked and Pareto CSVs", "14 weighted criteria + Pareto front; report %d" % cfg["ranking"]["final_n"]],
 ]
 add("T2", "Track A stages (Nextflow processes in main.nf)",
     ["#", "Stage", "Script", "Tool", "Input", "Output", "Key parameter"], stage_rows,
     "Parameters are defaults from config.yaml; they cap compute and are not outcomes.")
 
+# Same direction map as scripts/final_rank.py ("min" = lower is better).
+DIRECTION = {"ml_probability": "higher", "docking_score": "lower", "gnina_cnn_score": "higher", "admet_pass_fraction": "higher",
+             "G12D_mean_affinity": "lower", "WT_selectivity_margin": "higher", "resistance_worst_penalty": "lower",
+             "boltz_affinity_probability": "higher", "boltz_affinity_pred_value": "lower", "md_stability": "higher",
+             "mmgbsa": "lower", "openfe_abfe_dg_kcal": "lower", "synthetic_accessibility": "higher", "retrosynthesis_score": "higher"}
 add("T3", "Track A ranking weights (config.yaml, section ranking)",
     ["Criterion", "Weight", "Direction"],
-    [[k, str(v), d] for (k, v), d in zip(cfg["ranking"]["weights"].items(),
-     ["higher", "lower", "higher", "higher", "lower", "higher", "lower", "higher", "lower", "higher", "lower", "higher", "higher"])],
+    [[k, str(v), DIRECTION[k]] for k, v in cfg["ranking"]["weights"].items()],
     "Each criterion is converted to a percentile rank before weighting. Missing criteria are skipped, not imputed.")
 
 h, rows = read_tsv(A / "config" / "pdb_panel.tsv")
@@ -136,6 +141,7 @@ add("T9", "Software stack (versions used during development; pin your own with t
      ["OpenMM / PDBFixer", "8.6 / 1.12", "A (MD, receptors)", "pdac-md"],
      ["OpenFF toolkit / forcefields", "0.18 / 2026.01", "A (ligand parameters)", "pdac-md"],
      ["AmberTools", "26.0", "A (MM/GBSA)", "pdac-md or amber"],
+     ["OpenFE", "dev (conda-forge or source)", "A (absolute binding free energy check)", "openfe"],
      ["RetroChimera / Syntheseus", "0.1 dev / 0.9", "A (retrosynthesis)", "retrochimera"],
      ["ViennaRNA", "2.4.7", "B", "kras-adar"],
      ["Bowtie2", "2.5.5", "B", "kras-adar"],

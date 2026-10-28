@@ -212,6 +212,24 @@ process MMPBSA {
   """
 }
 
+process OPENFE_ABFE {
+  publishDir "${params.outdir}/openfe", mode: 'copy'
+  cpus 4; memory '16 GB'
+  input:
+    path hits
+    path cfg
+    path protein
+    path mmp
+  output:
+    path 'openfe_abfe.csv'
+    path 'openfe_vs_mmgbsa.json', optional: true
+  script:
+  """
+  python ${projectDir}/scripts/run_openfe_abfe.py --input ${hits} --protein ${protein} --config ${cfg} \
+    --mmgbsa ${mmp} --output openfe_abfe.csv --workdir openfe_work
+  """
+}
+
 process PREPARE_RESISTANCE_PANEL {
   publishDir "${params.outdir}/resistance", mode: 'copy'
   cpus 4; memory '16 GB'
@@ -253,6 +271,7 @@ process FINAL_RANK {
     path boltz
     path md
     path mmp
+    path openfe
     path resistance
     path cfg
   output:
@@ -261,7 +280,7 @@ process FINAL_RANK {
   script:
   """
   python ${projectDir}/scripts/final_rank.py --base ${base} --admet ${admet} --synthesis ${synth} \
-    --boltz ${boltz} --md ${md} --mmpbsa ${mmp} --resistance ${resistance} \
+    --boltz ${boltz} --md ${md} --mmpbsa ${mmp} --openfe ${openfe} --resistance ${resistance} \
     --config ${cfg} --ranked ranked_candidates.csv --pareto pareto_candidates.csv
   """
 }
@@ -312,7 +331,7 @@ workflow {
     admet_for_rank = base
   }
 
-  CLUSTER.out.tap { forSynth }.tap { forBoltz }.tap { forMd }.tap { forMmp }.tap { forResist }.set { forRank }
+  CLUSTER.out.tap { forSynth }.tap { forBoltz }.tap { forMd }.tap { forMmp }.tap { forOpenfe }.tap { forResist }.set { forRank }
   protein = Channel.fromPath(params.receptor_pdb, checkIfExists: true)
   panelTsv = Channel.fromPath("${projectDir}/config/pdb_panel.tsv", checkIfExists: true)
   PREPARE_RESISTANCE_PANEL(cfg, panelTsv)
@@ -322,6 +341,7 @@ workflow {
   SYNTHESIS.out.tap { synthForMd }.set { synthForRank }
   MD(forMd, cfg, protein, synthForMd)
   MMPBSA(forMmp, cfg, protein)
+  OPENFE_ABFE(forOpenfe, cfg, protein, MMPBSA.out)
   DOCK_RESISTANCE(forResist, PREPARE_RESISTANCE_PANEL.out.panel, cfg)
-  FINAL_RANK(forRank, admet_for_rank, synthForRank, boltzForRank, MD.out, MMPBSA.out, DOCK_RESISTANCE.out.scores, cfg)
+  FINAL_RANK(forRank, admet_for_rank, synthForRank, boltzForRank, MD.out, MMPBSA.out, OPENFE_ABFE.out[0], DOCK_RESISTANCE.out.scores, cfg)
 }

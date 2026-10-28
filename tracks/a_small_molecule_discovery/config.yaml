@@ -137,6 +137,20 @@ mmpbsa:
   input_file: mmpbsa.in
   max_input: 20
 
+# Independent check on MM/GBSA: OpenFE absolute binding free energy (alchemical, MBAR).
+# GPU heavy, so it is off by default and runs only on the first `max_input` compounds
+# that have a bound pose. Install: conda env "openfe" (see docs/INSTALL.md).
+openfe:
+  enabled: false
+  exe: openfe                              # CLI inside the openfe env
+  python: python                           # python inside the openfe env
+  max_input: 5
+  protocol_repeats: 3
+  complex_production_ns: 5.0
+  solvent_production_ns: 10.0
+  platform: CUDA
+  cofactors_sdf: []                        # pocket cofactors, e.g. GDP (Mg2+ needs separate handling)
+
 retrosynthesis:
   enabled: true
   python: python                           # resolved to the retrochimera env by scripts/configure_local.py
@@ -183,6 +197,7 @@ ranking:
     boltz_affinity_pred_value: 0.6
     md_stability: 0.6
     mmgbsa: 0.8
+    openfe_abfe_dg_kcal: 0.8
     synthetic_accessibility: 0.5
     retrosynthesis_score: 0.6
   final_n: 50

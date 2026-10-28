@@ -11,6 +11,7 @@ Boltz-2,2.2,"A, B, extensions","boltz2, kras-adar"
 OpenMM / PDBFixer,8.6 / 1.12,"A (MD, receptors)",pdac-md
 OpenFF toolkit / forcefields,0.18 / 2026.01,A (ligand parameters),pdac-md
 AmberTools,26.0,A (MM/GBSA),pdac-md or amber
+OpenFE,dev (conda-forge or source),A (absolute binding free energy check),openfe
 RetroChimera / Syntheseus,0.1 dev / 0.9,A (retrosynthesis),retrochimera
 ViennaRNA,2.4.7,B,kras-adar
 Bowtie2,2.5.5,B,kras-adar

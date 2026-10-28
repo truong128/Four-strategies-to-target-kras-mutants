@@ -6,11 +6,11 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-27T16:25:10.101047</dc:date>
+    <dc:date>2026-10-28T11:19:09.420253</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
-      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
      </cc:Agent>
     </dc:creator>
    </cc:Work>
@@ -35,7 +35,7 @@ L 505.6056 87.25536
 L 505.6056 65.345472 
 L 289.9944 65.345472 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #1f3a5f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #1f3a5f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 299.3688 114.221376 
@@ -43,7 +43,7 @@ L 496.2312 114.221376
 L 496.2312 92.311488 
 L 299.3688 92.311488 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #1f3a5f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #1f3a5f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 315.774 141.187392 
@@ -51,7 +51,7 @@ L 479.826 141.187392
 L 479.826 119.277504 
 L 315.774 119.277504 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 325.1484 168.153408 
@@ -59,7 +59,7 @@ L 470.4516 168.153408
 L 470.4516 146.24352 
 L 325.1484 146.24352 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 336.8664 195.119424 
@@ -67,7 +67,7 @@ L 458.7336 195.119424
 L 458.7336 173.209536 
 L 336.8664 173.209536 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #2a9d8f; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_7">
     <path d="M 343.8972 222.08544 
@@ -75,7 +75,7 @@ L 451.7028 222.08544
 L 451.7028 200.175552 
 L 343.8972 200.175552 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 350.928 249.051456 
@@ -83,7 +83,7 @@ L 444.672 249.051456
 L 444.672 227.141568 
 L 350.928 227.141568 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_9">
     <path d="M 357.9588 276.017472 
@@ -91,7 +91,7 @@ L 437.6412 276.017472
 L 437.6412 254.107584 
 L 357.9588 254.107584 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #e9a23b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
     <path d="M 364.9896 302.983488 
@@ -99,7 +99,7 @@ L 430.6104 302.983488
 L 430.6104 281.0736 
 L 364.9896 281.0736 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 372.0204 329.949504 
@@ -107,7 +107,7 @@ L 423.5796 329.949504
 L 423.5796 308.039616 
 L 372.0204 308.039616 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 379.0512 356.91552 
@@ -115,7 +115,7 @@ L 416.5488 356.91552
 L 416.5488 335.005632 
 L 379.0512 335.005632 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #6c5b9e; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="patch_13">
     <path d="M 384.9102 383.881536 
@@ -123,7 +123,7 @@ L 410.6898 383.881536
 L 410.6898 361.971648 
 L 384.9102 361.971648 
 z
-" clip-path="url(#p3f75a0cc97)" style="fill: #c0392b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p2fb9b09ad7)" style="fill: #c0392b; opacity: 0.95; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f3a5f" x="15.012" y="26.347537" transform="rotate(-0 15.012 26.347537)">Track A funnel: design caps at every stage</text>
@@ -192,10 +192,10 @@ z
     <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="554.04" y="321.124958" transform="rotate(-0 554.04 321.124958)">50 compounds</text>
    </g>
    <g id="text_23">
-    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="15.012" y="348.090654" transform="rotate(-0 15.012 348.090654)">11.  100 ns OpenMM MD + MM/GBSA</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="15.012" y="348.090654" transform="rotate(-0 15.012 348.090654)">11.  100 ns OpenMM MD + MM/GBSA (+ OpenFE)</text>
    </g>
    <g id="text_24">
-    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="554.04" y="348.090974" transform="rotate(-0 554.04 348.090974)">20 compounds</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="554.04" y="348.090974" transform="rotate(-0 554.04 348.090974)">20 compounds; OpenFE optional</text>
    </g>
    <g id="text_25">
     <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="15.012" y="375.05699" transform="rotate(-0 15.012 375.05699)">12.  Final ranking (Pareto + rank aggregation)</text>
@@ -215,7 +215,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p3f75a0cc97">
+  <clipPath id="p2fb9b09ad7">
    <rect x="7.2" y="7.2" width="781.2" height="421.344"/>
   </clipPath>
  </defs>

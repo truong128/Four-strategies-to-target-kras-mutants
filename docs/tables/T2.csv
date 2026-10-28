@@ -13,4 +13,5 @@
 12,Retrosynthesis,synthetic_feasibility.py,RetroChimera + Syntheseus Retro*,best docked,synthesis_scores.csv,"50 compounds, USPTO-50K checkpoint"
 13,Molecular dynamics,"run_md_batch.py, md_openmm.py","OpenMM, amber14, OpenFF 2.2.1",top docked + protein,md_scores.csv,"20 compounds, 100 ns"
 14,MM/GBSA,"run_mmpbsa_batch.py, mmgbsa_from_md.py",AmberTools,MD trajectories,mmpbsa_scores.csv,"igb=5, 0.15 M salt; 20 compounds"
-15,Final ranking,final_rank.py,pandas,all tables,ranked and Pareto CSVs,13 weighted criteria + Pareto front; report 50
+15,OpenFE absolute binding free energy (optional),run_openfe_abfe.py,"OpenFE, OpenMM",poses + protein,openfe_abfe.csv,"off by default; 5 compounds, 3 repeats"
+16,Final ranking,final_rank.py,pandas,all tables,ranked and Pareto CSVs,14 weighted criteria + Pareto front; report 50

@@ -1,0 +1,10 @@
+name: openfe
+channels: [conda-forge]
+dependencies:
+  - python>=3.11
+  - openfe            # Open Free Energy toolkit (AbsoluteBindingProtocol, RelativeHybridTopologyProtocol)
+  - ambertools        # AM1-BCC ligand charges
+  - pdbfixer          # adds hydrogens to a protein-only PDB
+  - scipy
+  - pandas
+  - pyyaml

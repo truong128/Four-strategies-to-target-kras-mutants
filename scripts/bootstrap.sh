@@ -22,7 +22,7 @@ mk_env() {  # mk_env <env-name> <yml> [pip-extra...]
 
 check() {
   log "environment report"
-  for e in pdac-dd pdac-md admet-ai boltz2 amber lbz retrochimera kras-adar; do
+  for e in pdac-dd pdac-md admet-ai boltz2 amber openfe lbz retrochimera kras-adar; do
     if p="$(env_prefix "$e")"; then printf '  %-14s %s\n' "$e" "$p"; else printf '  %-14s MISSING\n' "$e"; fi
   done
   for t in nextflow git gh nvidia-smi; do
@@ -41,6 +41,7 @@ track_a() {
   mk_env admet-ai "$A/envs/admet.yml"
   mk_env boltz2 "$A/envs/boltz2.yml"
   mk_env amber "$A/envs/amber.yml"
+  mk_env openfe "$A/envs/openfe.yml"
   mk_env lbz "$A/envs/lbz.yml"
   mk_env retrochimera "$A/envs/retrochimera.yml"
   command -v nextflow >/dev/null || warn "Nextflow missing. Install: curl -s https://get.nextflow.io | bash && mv nextflow ~/bin/"
