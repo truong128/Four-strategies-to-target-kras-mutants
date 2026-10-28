@@ -1,4 +1,4 @@
-> **Part of [two-strategies-to-target-kras-mutants](../../README.md).** Use `scripts/run_track_b.sh` from the repository root. Reference files (Ensembl GTF and transcriptome) are downloaded by `scripts/fetch_public_inputs.sh b` and are not shipped. The RESTORE 2.0 supplementary material is not redistributed; obtain it from the publication (see `docs/DATA_ACCESS.md` at the repository root).
+> **Part of [Four_therapeutic_strategies_to_target_Pancreatic_Cancer](../../README.md).** Use `scripts/run_track_b.sh` from the repository root. Reference files (Ensembl GTF and transcriptome) are downloaded by `scripts/fetch_public_inputs.sh b` and are not shipped. The RESTORE 2.0 supplementary material is not redistributed; obtain it from the publication (see `docs/DATA_ACCESS.md` at the repository root).
 
 # KRAS G12D ADAR RNA Correction: E2E Computational Research Package
 

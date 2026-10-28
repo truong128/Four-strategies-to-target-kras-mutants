@@ -1,6 +1,6 @@
-# Therapeutic Strategies to Target KRAS Mutants
+# Four Therapeutic Strategies to Target Pancreatic Cancer
 
-### An open, end-to-end computational platform for drug discovery, drug repurposing and antisense therapeutics: it screens 13.6 billion molecules *and* designs ADAR-recruiting guide RNAs against the same pancreatic cancer driver
+### An open, end-to-end computational platform for drug discovery, drug repurposing, antisense therapeutics and peptide binders against KRAS-mutant pancreatic cancer: it screens 13.6 billion molecules, re-scores approved drugs across 18 KRAS alleles, designs ADAR-recruiting guide RNAs and designs peptide binders for the same driver
 
 ![license](https://img.shields.io/badge/license-MIT-blue)
 ![workflow](https://img.shields.io/badge/workflow-Nextflow%20DSL2-23aa62)
@@ -8,15 +8,16 @@
 ![scope](https://img.shields.io/badge/scope-code%20and%20protocols%20only-orange)
 ![status](https://img.shields.io/badge/claims-computational%20prioritization%20only-lightgrey)
 
-> **13.6 billion molecules. One mutation. Two ways to attack it.**
+> **13.6 billion molecules. One mutation. Four ways to attack it.**
 >
-> *Drug discovery  |  Drug repurposing  |  Antisense therapeutics*
+> *Drug discovery  |  Drug repurposing  |  Antisense therapeutics  |  Peptide binders*
 >
 > Oncogenic KRAS mutations sit in roughly nine of ten pancreatic ductal adenocarcinomas (PDAC), G12D is the most frequent variant, and for decades KRAS was called undruggable.
-> This repository gives you the complete computational playbook for two independent routes to the same target:
-> **(A)** find a small molecule in the largest purchasable chemical space on Earth, and
-> **(B)** skip the protein entirely and recode the mutant *mRNA* with antisense guide RNAs that recruit the cell's own editing enzyme, ADAR.
-> A third lane (**C**) designs short peptide binders for 18 KRAS alleles.
+> This repository gives you the complete computational playbook for four independent routes to the same target:
+> **(1) drug discovery**: find a small molecule in the largest purchasable chemical space on Earth (Track A);
+> **(2) drug repurposing**: score approved drugs against KRAS G12D and then across 17 other alleles (Track A+);
+> **(3) antisense therapeutics**: skip the protein entirely and recode the mutant *mRNA* with guide RNAs that recruit the cell's own editing enzyme, ADAR (Track B); and
+> **(4) peptide binders**: design short peptides for 18 KRAS alleles (Track C).
 
 Every stage is scripted, parameterized and gated. Every claim boundary is written down. **No data, no results, no patient material ships in this repository**: only code, configuration, documentation, figures and tables describing the method.
 
@@ -26,7 +27,7 @@ Every stage is scripted, parameterized and gated. Every claim boundary is writte
 
 ---
 
-## Why this is worth your time
+## Why use it
 
 | | |
 |---|---|
@@ -54,8 +55,8 @@ Every stage is scripted, parameterized and gated. Every claim boundary is writte
 ## Quickstart
 
 ```bash
-git clone https://github.com/truong128/two-strategies-to-target-kras-mutants.git
-cd two-strategies-to-target-kras-mutants
+git clone https://github.com/truong128/Four_therapeutic_strategies_to_target_Pancreatic_Cancer.git
+cd Four_therapeutic_strategies_to_target_Pancreatic_Cancer
 
 scripts/bootstrap.sh                 # conda environments + external tools (RFD4-Proteina)
 scripts/fetch_public_inputs.sh       # 7RPZ receptor, Ensembl 113, ADAR1, KRAS CDS, allele targets
@@ -122,7 +123,7 @@ All tables are generated from the shipped configuration by [`docs/make_tables.py
 ## Repository map
 
 ```text
-two-strategies-to-target-kras-mutants/
+Four_therapeutic_strategies_to_target_Pancreatic_Cancer/
   README.md                        you are here
   LICENSE, CITATION.cff, Makefile
   docs/

@@ -1,4 +1,4 @@
-> **Part of [two-strategies-to-target-kras-mutants](../../README.md).** Use the wrappers in `scripts/` at the repository root (`bootstrap.sh`, `fetch_public_inputs.sh`, `run_track_a.sh`) instead of the manual steps below. Run `python ../../scripts/configure_local.py` once to write `config.local.yaml`, and pass that file as `--config`.
+> **Part of [Four_therapeutic_strategies_to_target_Pancreatic_Cancer](../../README.md).** Use the wrappers in `scripts/` at the repository root (`bootstrap.sh`, `fetch_public_inputs.sh`, `run_track_a.sh`) instead of the manual steps below. Run `python ../../scripts/configure_local.py` once to write `config.local.yaml`, and pass that file as `--config`.
 
 # PDAC-DD-E2E
 

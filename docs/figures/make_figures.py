@@ -78,33 +78,33 @@ def chain(ax, y, items, x0=14, x1=97, h=11, fc=SOFT_NAVY, ec=NAVY, fs=7.4, gap=2
 
 # ---------------------------------------------------------------------------------------------
 def fig1_overview():
-    fig, ax = canvas(16, 9.4)
-    title(ax, "Two therapeutic strategies against KRAS G12D, plus a peptide side road",
-          "One driver mutation, three computational routes. Everything on this page is method: no data, no results.")
-    box(ax, 1, 36, 10.5, 34, "KRAS\nG12D\n(c.35G>A)\n\nPDAC\ndriver", fc=NAVY, ec=NAVY, tc="white", bold=True, fs=9.5)
+    fig, ax = canvas(10.5, 9.4)
+    title(ax, "Four therapeutic strategies against KRAS-mutant pancreatic cancer",
+          "One driver mutation, four computational routes. Method only: no data, no results.")
+    box(ax, 1, 33, 12, 39, "KRAS\nG12D\n(c.35G>A)\n\nPDAC\ndriver", fc=NAVY, ec=NAVY, tc="white", bold=True, fs=10.5)
 
     lanes = [
-        (70, "TRACK A   Small molecules", TEAL, SOFT_TEAL,
-         ["Enamine REAL\n13.6B streamed\n(never unpacked)", "Dock 200k sample\n(Vina) + label\ntop 1%", "20 classifiers,\ncalibrated +\nconformal",
-          "Score full\nlibrary, redock\ntop 50,000", "ADMET-AI filter,\ncluster\n(Tanimoto 0.55)", "Resistance panel\n+ Boltz-2 + MD\n+ MM/GBSA + retro", "Final 50\n(Pareto + rank\naggregation)"]),
-        (47, "TRACK B   RNA editing with ADAR", PURPLE, SOFT_PURPLE,
-         ["KRAS-4B CDS\n(ENST00000311936)\n+ HGVS variants", "A-to-I\ncorrectability\n(G>A only)", "Guide design\n33 / 40 / 59 nt\n+ bystanders", "Chemistry transfer\n(RESTORE 2.0\npositional)",
-          "Bowtie2 off-\ntarget screen\n(transcriptome)", "ViennaRNA +\nBoltz-2 ADAR1\ngeometry", "Ranked guides\n(experiment-\ngated)"]),
-        (24, "TRACK C   Peptide binders", ORANGE, SOFT_ORANGE,
-         ["7RPZ backbone", "Graft 18 allele\nside chains", "Hotspot + H-bond\nconditions (YAML)", "RFD4-Proteina\n8-16 aa designs", "Optional AF3 /\nOpenFold3\nrefolding", "Shortlist for\nbinding assays", ""]),
+        (72, "1  DRUG DISCOVERY    small molecules (Track A)", TEAL, SOFT_TEAL,
+         ["Enamine REAL\n13.6B streamed,\nnever unpacked", "ML triage of the full\nlibrary, Vina redock\nof the top 50,000", "ADMET-AI, resistance\npanel, Boltz-2", "MD, MM/GBSA\n(+ OpenFE), retro,\nPareto top 50"]),
+        (54, "2  DRUG REPURPOSING    approved drugs (Track A+)", ORANGE, SOFT_ORANGE,
+         ["Table of approved\nsmall molecules", "Boltz-2 affinity on\nKRAS G12D (MSA)", "Keep affinity\nprobability above 0.5", "Re-score on the 17\nother KRAS alleles"]),
+        (36, "3  ANTISENSE    ADAR RNA editing (Track B)", PURPLE, SOFT_PURPLE,
+         ["KRAS-4B CDS +\nHGVS variant", "A-to-I correctability\n(G>A changes only)", "Guide design, bystander\nmap, chemistry transfer", "Bowtie2 off-target,\nViennaRNA, Boltz-2\nADAR1 geometry"]),
+        (18, "4  PEPTIDE BINDERS    18 KRAS alleles (Track C)", RED, "#F6D9D5",
+         ["7RPZ backbone,\n18 allele side chains", "Hotspot and H-bond\nconditions (YAML)", "RFD4-Proteina\n8-16 aa designs", "Optional AF3 /\nOpenFold3 refolding"]),
     ]
     for y, label, ec, fc, items in lanes:
-        ax.text(14, y + 13.2, label, fontsize=9.5, fontweight="bold", color=ec)
-        items = [i for i in items if i]
-        chain(ax, y, items, fc=fc, ec=ec, fs=7.2, x0=14, x1=97 if len(items) == 7 else 14 + (97 - 14) * len(items) / 7)
-        arrow(ax, 11.5, 53, 13.4, y + 5.5, color=ec, lw=1.0)
+        ax.text(15, y + 14.2, label, fontsize=9.6, fontweight="bold", color=ec)
+        chain(ax, y, items, fc=fc, ec=ec, fs=8.6, x0=15, x1=99, h=12.5)
+        arrow(ax, 13.2, 52.5, 14.7, y + 6, color=ec, lw=1.0)
 
-    box(ax, 1, 4, 96, 9,
-        "EXPERIMENTAL VALIDATION (outside this repository):  biochemical binding / editing   >   WT and RAS-isoform selectivity   >   pERK and G12D-selective killing   >   organoids + CAFs   >   PK   >   in vivo",
-        fc=LIGHT, ec=GREY, fs=7.6, ls="--")
+    box(ax, 1, 1.5, 98, 9.5,
+        "EXPERIMENTAL VALIDATION (outside this repository)\nbinding / editing  >  WT and RAS-isoform selectivity  >  pERK, G12D-selective killing  >  organoids + CAFs  >  PK  >  in vivo",
+        fc=LIGHT, ec=GREY, fs=8.4, ls="--")
     save(fig, "fig1_overview")
 
 
+# ---------------------------------------------------------------------------------------------
 def fig2_funnel():
     fig, ax = canvas(14, 7.6)
     title(ax, "Track A funnel: design caps at every stage",

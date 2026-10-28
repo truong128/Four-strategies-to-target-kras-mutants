@@ -1,23 +1,27 @@
 cff-version: 1.2.0
 message: "If you use this platform, please cite it as below and cite the underlying tools."
-title: "Two Therapeutic Strategies to Target KRAS Mutants: an open, end-to-end computational platform for small-molecule screening and ADAR RNA editing in pancreatic cancer"
+title: "Four Therapeutic Strategies to Target Pancreatic Cancer: an open, end-to-end computational platform for drug discovery, drug repurposing, ADAR antisense guide design and peptide binders against KRAS mutants"
 type: software
 authors:
   - family-names: Nguyen
     given-names: Truong
     affiliation: "CUNY School of Medicine"
-repository-code: "https://github.com/truong128/two-strategies-to-target-kras-mutants"
+repository-code: "https://github.com/truong128/Four_therapeutic_strategies_to_target_Pancreatic_Cancer"
 license: MIT
 keywords:
   - KRAS mutants
   - pancreatic ductal adenocarcinoma
   - ultra-large virtual screening
   - machine learning
+  - drug repurposing
+  - antisense oligonucleotides
   - ADAR
   - RNA editing
+  - peptide binders
   - Nextflow
 abstract: >-
   Reproducible computational workflows against KRAS mutants: ML-guided docking of a 13.6 billion molecule
-  library with resistance-aware ensemble docking, Boltz-2, molecular dynamics, MM/GBSA and retrosynthesis;
+  library with resistance-aware ensemble docking, Boltz-2, molecular dynamics, MM/GBSA, OpenFE absolute binding free
+  energy and retrosynthesis; repurposing of approved drugs across KRAS alleles;
   ADAR-recruiting guide RNA design with off-target and structure stages; and peptide binder design for 18
   KRAS alleles (mutants). Code and protocols only; no data or results are distributed.

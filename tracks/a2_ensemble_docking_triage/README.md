@@ -1,4 +1,4 @@
-> **Part of [two-strategies-to-target-kras-mutants](../../README.md).** Use `scripts/run_track_a2.sh` from the repository root. Put your own library in `inputs/library.csv` (columns `id,smiles`; see `inputs/library.template.csv`). No compounds are shipped.
+> **Part of [Four_therapeutic_strategies_to_target_Pancreatic_Cancer](../../README.md).** Use `scripts/run_track_a2.sh` from the repository root. Put your own library in `inputs/library.csv` (columns `id,smiles`; see `inputs/library.template.csv`). No compounds are shipped.
 
 # KRAS G12D / PDAC resistance-robust E2E screen
 

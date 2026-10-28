@@ -1,4 +1,4 @@
-> **Part of [two-strategies-to-target-kras-mutants](../../README.md).** Use `scripts/run_track_c.sh` from the repository root.
+> **Part of [Four_therapeutic_strategies_to_target_Pancreatic_Cancer](../../README.md).** Use `scripts/run_track_c.sh` from the repository root.
 
 # Track C: de novo peptide binders for 18 KRAS alleles
 
